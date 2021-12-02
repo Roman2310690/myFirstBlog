@@ -60,7 +60,7 @@ class User extends ActiveRecordEntity
         return $this->passwordHash;
     }
 
-    public function activate(): void
+    public function activate()
     {
         $this->isConfirmed = true;
         $this->save();

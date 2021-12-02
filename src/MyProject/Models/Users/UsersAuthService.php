@@ -4,7 +4,7 @@ namespace MyProject\Models\Users;
 
 class UsersAuthService
 {
-    public static function createToken(User $user): void
+    public static function createToken(User $user)
     {
         $token = $user->getId() . ':' . $user->getAuthToken();
         setcookie('token', $token, 0, '/', '', false, true);

@@ -10,7 +10,7 @@ use MyProject\Models\Users\User;
 
 class ArticlesController extends AbstractController
 {
-    public function view(int $articleId): void
+    public function view(int $articleId)
     {
         $article = Article::getById($articleId);
 
@@ -50,7 +50,7 @@ class ArticlesController extends AbstractController
         $this->view->renderHtml('articles/edit.php', ['article' => $article]);
     }
 
-    public function add(): void
+    public function add()
     {
         if ($this->user === null) {
             throw new UnauthorizedException();
